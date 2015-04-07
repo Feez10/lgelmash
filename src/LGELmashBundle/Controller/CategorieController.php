@@ -13,7 +13,7 @@ use LGELmashBundle\Form\CategorieType;
 /**
  * Categorie controller.
  *
- * @Route("/categories")
+ * @Route("/admin/categories")
  */
 class CategorieController extends Controller
 {

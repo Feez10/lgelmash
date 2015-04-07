@@ -7,6 +7,13 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <div>
+            <a href="{{ path('lgelmash_default_index') }}">Accueil</a>
+            <a href="{{ path('lgelmash_default_classement') }}">Classement</a>
+            <a href="{{ path('lgelmash_default_versus') }}">Versus</a>
+            <a href="{{ path('lgelmash_default_suggestion') }}">Suggestion</a>
+            <a href="{{ path('lgelmash_default_admin') }}">Administration</a>
+        </div>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

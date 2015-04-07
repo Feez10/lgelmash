@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="joueur")
+ * @ORM\Entity(repositoryClass="LGELmashBundle\Entity\JoueurRepository")
  */
 class Joueur {
 
@@ -18,7 +19,7 @@ class Joueur {
     protected $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=100, unique=true)
      */
     protected $pseudo;
 
@@ -77,6 +78,29 @@ class Joueur {
      * @return boolean
      */
     public function getCan_be_voted()
+    {
+        return $this->can_be_voted;
+    }
+
+    /**
+     * Set can_be_voted
+     *
+     * @param boolean $canBeVoted
+     * @return Joueur
+     */
+    public function setCanBeVoted($canBeVoted)
+    {
+        $this->can_be_voted = $canBeVoted;
+
+        return $this;
+    }
+
+    /**
+     * Get can_be_voted
+     *
+     * @return boolean 
+     */
+    public function getCanBeVoted()
     {
         return $this->can_be_voted;
     }

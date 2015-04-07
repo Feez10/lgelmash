@@ -1,1 +1,9 @@
-<h1>Versus</h1>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Versus</h1>
+
+Qui de {{ joueurs[0].pseudo }} et {{ joueurs[1].pseudo }} est le meilleur {{ categorie.libelle }} ?
+
+
+{% endblock %}

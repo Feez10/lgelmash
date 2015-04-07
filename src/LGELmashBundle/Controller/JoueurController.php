@@ -15,7 +15,7 @@ use LGELmashBundle\Form\JoueurType;
 /**
  * Joueur controller.
  *
- * @Route("/joueurs")
+ * @Route("/admin/joueurs")
  */
 class JoueurController extends Controller
 {
@@ -59,7 +59,7 @@ class JoueurController extends Controller
             {
                 $classer = new Classer();
                 $classer->setCategorie($categorie);
-                $classer->setJoueurs($entity);
+                $classer->setJoueur($entity);
                 $classer->setElo(1200);
                 $em->persist($classer);
             }
@@ -96,7 +96,7 @@ class JoueurController extends Controller
     /**
      * Displays a form to create a new Joueur entity.
      *
-     * @Route("/new", name="joueurs_new")
+     * @Route("/nouveau", name="joueurs_new")
      * @Method("GET")
      * @Template()
      */

@@ -1,1 +1,42 @@
-<h1>Classement</h1>
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Classement</h1>
+
+    <ul>
+    {% for categorie in categories %}
+        <li><a href="#{{ categorie.libelle }}">{{ categorie.libelle }}</a></li>
+    {%  endfor %}
+    </ul>
+
+    {% set no_categorie = 0 %}
+    {% for categorie in classements %}
+
+        <h2 id="{{ categories[no_categorie].libelle }}">Meilleur(e)s {{ categories[no_categorie].libelle }}</h2>
+
+
+        <table class="records_list">
+            <thead>
+            <tr>
+                <th>Classement</th>
+                <th>Pseudo</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% set no = 1 %}
+            {% for classement in categorie %}
+                <tr>
+                    <td>{{ no }}</td>
+                    <td>{{ classement.pseudo }}</td>
+                </tr>
+                {% set no = no + 1 %}
+            {% endfor %}
+            </tbody>
+
+        </table>
+
+        {% set no_categorie = no_categorie + 1 %}
+
+    {% endfor %}
+{% endblock %}

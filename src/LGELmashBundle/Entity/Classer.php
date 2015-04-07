@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="classer")
+ * @ORM\Entity(repositoryClass="LGELmashBundle\Entity\ClasserRepository")
  */
 class Classer {
 
@@ -18,13 +19,13 @@ class Classer {
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Joueur")
+     * @ORM\ManyToOne(targetEntity="Joueur")
      * @ORM\JoinColumn(name="joueur_id", referencedColumnName="id")
      **/
-    protected $joueurs;
+    protected $joueur;
 
     /**
-     * @ORM\OneToOne(targetEntity="Categorie")
+     * @ORM\ManyToOne(targetEntity="Categorie")
      * @ORM\JoinColumn(name="categorie_id", referencedColumnName="id")
      **/
     protected $categorie;
@@ -73,21 +74,21 @@ class Classer {
      * @param \LGELmashBundle\Entity\Joueur $joueurs
      * @return Classer
      */
-    public function setJoueurs(\LGELmashBundle\Entity\Joueur $joueurs = null)
+    public function setJoueur(\LGELmashBundle\Entity\Joueur $joueur = null)
     {
-        $this->joueurs = $joueurs;
+        $this->joueur = $joueur;
 
         return $this;
     }
 
     /**
-     * Get joueurs
+     * Get joueur
      *
      * @return \LGELmashBundle\Entity\Joueur 
      */
-    public function getJoueurs()
+    public function getJoueur()
     {
-        return $this->joueurs;
+        return $this->joueur;
     }
 
     /**
