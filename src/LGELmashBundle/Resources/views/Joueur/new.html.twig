@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Création d'un joueur</h1>
+
+    {{ form(form) }}
+
+    <a href="{{ path('joueurs') }}">
+        Retour à la liste
+    </a>
+
+{% endblock %}

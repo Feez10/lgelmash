@@ -1,3 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+lge_lmash:
+    resource: "@LGELmashBundle/Controller/"
     type:     annotation
+    prefix:   /

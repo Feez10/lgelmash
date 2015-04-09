@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Catégorie</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ entity.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('categories_edit', { 'id': entity.id }) }}">Modifier</a>
+
+    {{ form(delete_form) }}
+
+    <a href="{{ path('categories') }}">Retour à la liste</a>
+{% endblock %}

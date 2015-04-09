@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Créer une catégorie</h1>
+
+    {{ form(form) }}
+
+    <a href="{{ path('categories') }}">Retour à la liste</a>
+{% endblock %}
