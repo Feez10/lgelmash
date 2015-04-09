@@ -6,27 +6,29 @@
     <table class="record_properties">
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>ID</th>
                 <td>{{ entity.id }}</td>
             </tr>
             <tr>
                 <th>Pseudo</th>
                 <td>{{ entity.pseudo }}</td>
             </tr>
+            <tr>
+                <th>Compte actif ?</th>
+                <td>{% if entity.can_be_voted %}
+                        Oui
+                    {% else %}
+                        Non
+                    {% endif %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('joueurs') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('joueurs_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
+    <a href="{{ path('joueurs_edit', { 'id': entity.id }) }}">Modifier</a>
+
+    {{ form(delete_form) }}
+
+    <a href="{{ path('joueurs') }}">Retour à la liste</a>
 </ul>
 {% endblock %}

@@ -1,15 +1,12 @@
 {% extends '::base.html.twig' %}
 
 {% block body -%}
-    <h1>Joueur creation</h1>
+    <h1>Création d'un joueur</h1>
 
     {{ form(form) }}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('joueurs') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    <a href="{{ path('joueurs') }}">
+        Retour à la liste
+    </a>
+
 {% endblock %}

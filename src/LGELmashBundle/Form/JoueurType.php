@@ -16,6 +16,7 @@ class JoueurType extends AbstractType
     {
         $builder
             ->add('pseudo')
+            ->add('can_be_voted', 'checkbox', array('label' => "Compte actif ?",'required'  => false))
         ;
     }
     
